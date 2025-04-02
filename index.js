@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 app.use(requestIp.mw());
 
 app.get("/form", (req, res) => {
-    bar name = req.query.name;
+    var name = req.query.name;
     const clientIp = req.clientIp || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
     
     // Get local IPs
