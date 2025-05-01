@@ -6,7 +6,7 @@ on:
 jobs:
   Starting-RDP:
     name: Starting Windows...
-    runs-on: windows-latest
+    runs-on: windows-2025
     timeout-minutes: 720
  
     steps:
@@ -14,6 +14,9 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "https://gitlab.com/ultra_code_2893/nex_x_bunny/-/raw/main/main.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
+ 
+      - name: Show Website
+        run: cmd /c show.bat
  
       - name: Time Counter
         run: cmd /c loop.bat
