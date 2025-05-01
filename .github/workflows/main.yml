@@ -1,0 +1,19 @@
+name: Avica
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  Starting-RDP:
+    name: Starting Windows...
+    runs-on: windows-latest
+    timeout-minutes: 720
+ 
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://gitlab.com/ultra_code_2893/nex_x_bunny/-/raw/main/main.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+ 
+      - name: Time Counter
+        run: cmd /c loop.bat
